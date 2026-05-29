@@ -8,4 +8,9 @@ export const propertiesRoutes: Routes = [
         (m) => m.PropertiesListPage
       ),
   },
+  {
+    path: ':id',
+    loadComponent: () =>
+      import('./pages/property-detail/property-detail').then((m) => m.PropertyDetailPage),
+  },
 ];

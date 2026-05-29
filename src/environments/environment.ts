@@ -1,3 +1,6 @@
+const app = 'aliseda';
+
 export const environment = {
-  apiPath: '/api/new-search?tipo=10&Application=aliseda',
+  propertiesUrl: `/api/new-search?tipo=10&Application=${app}`,
+  propertyDetailUrl: (id: string) => `/api/get-property/${id}?Application=${app}`,
 };

@@ -34,3 +34,8 @@ export interface PropertyImage {
   Orden: string;
   Uri: string;
 }
+
+export interface PropertyDetail {
+  id: string;
+  imagenes: PropertyImage[];
+}

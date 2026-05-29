@@ -10,7 +10,7 @@
       @if (item.imagenes.length > 0) {
         <img [src]="item.imagenes[0].Uri" [alt]="item.id" width="200" />
       }
-      <p>{{ item.id }}</p>
+      <a [routerLink]="['/properties', item.id]">{{ item.id }}</a>
       <p>{{ item.Metadescription }}</p>
     </div>
   }
