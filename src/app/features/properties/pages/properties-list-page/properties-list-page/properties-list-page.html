@@ -1,0 +1,29 @@
+@if (properties.isLoading()) {
+  <p>Cargando...</p>
+} @else if (properties.error()) {
+  <p>Error al cargar las propiedades</p>
+} @else if (properties.hasValue()) {
+  @let response = properties.value()!;
+
+  @for (item of response.data; track item.id) {
+    <div>
+      @if (item.imagenes.length > 0) {
+        <img [src]="item.imagenes[0].Uri" [alt]="item.id" width="200" />
+      }
+      <p>{{ item.id }}</p>
+      <p>{{ item.Metadescription }}</p>
+    </div>
+  }
+
+  <nav>
+    <button [disabled]="!response.prev_page_url" (click)="goTo(response.current_page - 1)">
+      Anterior
+    </button>
+
+    <span>{{ response.current_page }} de {{ response.last_page }} ({{ response.total }} resultados)</span>
+
+    <button [disabled]="!response.next_page_url" (click)="goTo(response.current_page + 1)">
+      Siguiente
+    </button>
+  </nav>
+}

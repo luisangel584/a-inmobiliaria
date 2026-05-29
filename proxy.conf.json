@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "https://laravelpre.alisedainmobiliaria.com",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
