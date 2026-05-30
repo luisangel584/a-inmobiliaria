@@ -5,15 +5,13 @@
 } @else if (properties.hasValue()) {
   @let response = properties.value()!;
 
-  @for (item of response.data; track item.id) {
-    <div>
-      @if (item.imagenes.length > 0) {
-        <img [src]="item.imagenes[0].Uri" [alt]="item.id" width="200" />
-      }
-      <a [routerLink]="['/properties', item.id]">{{ item.id }}</a>
-      <p>{{ item.Metadescription }}</p>
-    </div>
-  }
+  <div class="grid">
+    @for (item of response.data; track item.id) {
+      <div class="col-12 md:col-6 xl:col-4">
+        <app-property-card [property]="item" />
+      </div>
+    }
+  </div>
 
   <nav>
     <button [disabled]="!response.prev_page_url" (click)="goTo(response.current_page - 1)">
@@ -26,4 +24,6 @@
       Siguiente
     </button>
   </nav>
+
+  <button class="load-more">Ver 12 inmuebles más</button>
 }

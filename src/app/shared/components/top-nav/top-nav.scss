@@ -1,0 +1,11 @@
+.top-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 77px;
+  background-color: #fff;
+
+  &__logo {
+    height: 38px;
+  }
+}

@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { rxResource } from '@angular/core/rxjs-interop';
-import { RouterLink } from '@angular/router';
+import { PropertyCard } from '../../../components/property-card/property-card';
 import { PropertiesService } from '../../../services/properties.service';
 
 @Component({
   selector: 'app-properties-list-page',
-  imports: [RouterLink],
+  imports: [PropertyCard],
   templateUrl: './properties-list-page.html',
   styleUrl: './properties-list-page.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

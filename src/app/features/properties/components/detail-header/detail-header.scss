@@ -1,0 +1,29 @@
+@use 'styles/variables' as *;
+
+.detail-header {
+  &__title {
+    margin: 0;
+    margin-block: $spacing-m;
+    font-size: 32px;
+    font-weight: 500;
+  }
+
+  &__location {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-block: $spacing-s;
+  }
+
+  &__location-icon {
+    font-size: 18px;
+    color: $neutral-300;
+    display: flex;
+    margin-right: $spacing-xs;
+  }
+
+  &__location-text {
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
