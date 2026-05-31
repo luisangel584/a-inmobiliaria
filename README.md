@@ -130,7 +130,7 @@ src/
 │   │
 │   ├── features/
 │   │   └── properties/                     # Feature de propiedades
-│   │       ├── components/                 # Componentes presentacionales (solo reciben datos)
+│   │       ├── components/                 # Componentes reutilizables en las pages (solo reciben datos)
 │   │       │   ├── hero-gallery/           # Galería de imágenes con modal
 │   │       │   ├── property-card/          # Tarjeta de propiedad para el listado
 │   │       │   ├── detail-header/          # Título y ubicación en el detalle
@@ -138,7 +138,7 @@ src/
 │   │       │   ├── detail-amenities/       # Superficie, habitaciones y baños
 │   │       │   └── detail-description/     # Descripción de la propiedad
 │   │       │
-│   │       ├── pages/                      # Páginas inteligentes (llaman servicios y gestionan estado)
+│   │       ├── pages/                      # Páginas que se muestran por cada route (llaman a los componentes reutilizables)
 │   │       │   ├── properties-list-page/   # Listado paginado de propiedades
 │   │       │   └── property-detail/        # Detalle de una propiedad
 │   │       │
