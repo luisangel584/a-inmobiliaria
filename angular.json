@@ -77,6 +77,13 @@
         },
         "test": {
           "builder": "@angular/build:unit-test"
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "/a-inmobiliaria/",
+            "buildTarget": "a-inmobiliaria:build:production"
+          }
         }
       }
     }
