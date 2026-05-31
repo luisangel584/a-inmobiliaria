@@ -1,0 +1,29 @@
+@if (property.isLoading()) {
+  <p>Cargando propiedad...</p>
+} @else if (property.error()) {
+  <p>Error al cargar la propiedad</p>
+} @else if (property.hasValue()) {
+  @let detail = property.value()!;
+
+
+  <div class="container px-2">
+    <div class="grid">
+      <div class="col-12 p-0">
+        <app-hero-gallery [images]="detail.imagenes" />
+      </div>
+      <div class="col-12 md:col-9 px-4">
+        <app-detail-pricing [Precio]="detail.operacion.Precio" [FkPropiedad]="detail.operacion.FkPropiedad" />
+        <app-detail-header
+          [Metadescription]="detail.Metadescription"
+          [provincia]="detail.address.provincia.Nombre"
+        />
+        <app-detail-amenities
+          [ConstructedArea]="detail.ConstructedArea"
+          [Bedrooms]="detail.Bedrooms"
+          [Bathrooms]="detail.Bathrooms"
+        />
+        <app-detail-description [Description]="detail.Description" />
+      </div>
+    </div>
+  </div>
+}

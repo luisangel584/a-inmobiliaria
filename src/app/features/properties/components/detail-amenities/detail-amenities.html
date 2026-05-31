@@ -1,0 +1,14 @@
+<div class="detail-amenities">
+  <div class="detail-amenities__item">
+    <img class="detail-amenities__icon" src="icons/constructed_area.svg" alt="" aria-hidden="true" />
+    <span class="detail-amenities__label">{{ ConstructedArea() }} m<sup>2</sup></span>
+  </div>
+  <div class="detail-amenities__item">
+    <img class="detail-amenities__icon" src="icons/bedrooms.svg" alt="" aria-hidden="true" />
+    <span class="detail-amenities__label">{{ Bedrooms() }} {{ Bathrooms() === 1 ? 'habitación' : 'habitaciones' }}</span>
+  </div>
+  <div class="detail-amenities__item">
+    <img class="detail-amenities__icon" src="icons/bathrooms.png" alt="" aria-hidden="true" />
+    <span class="detail-amenities__label">{{ Bathrooms() }} {{ Bathrooms() === 1 ? 'baño' : 'baños' }}</span>
+  </div>
+</div>

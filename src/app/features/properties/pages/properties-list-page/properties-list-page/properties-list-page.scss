@@ -1,0 +1,25 @@
+@use 'styles/variables' as *;
+
+%btn-pill {
+  background-color: $primary-500;
+  color: $color-text-primary;
+  border: none;
+  border-radius: 99px;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 12px 32px;
+  cursor: pointer;
+}
+
+.load-more {
+  @extend %btn-pill;
+  display: block;
+  margin: $spacing-l auto;
+}
+
+.scroll-top {
+  @extend %btn-pill;
+  position: fixed;
+  bottom: $spacing-m;
+  right: $spacing-m;
+}

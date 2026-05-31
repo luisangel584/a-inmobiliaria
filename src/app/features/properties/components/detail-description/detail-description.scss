@@ -1,0 +1,25 @@
+@use 'styles/variables' as *;
+
+.detail-description {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-m;
+  margin-block: $spacing-l;
+  border-top: 2px solid $bright-gray;
+  border-bottom: 2px solid $bright-gray;
+  padding-block: $spacing-l;
+
+  &__title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 175%;
+    color: $neutral-300;
+  }
+}
