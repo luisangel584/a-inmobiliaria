@@ -1,29 +1,21 @@
-@if (properties.isLoading()) {
+@if (isLoading() && items().length === 0) {
   <p>Cargando...</p>
-} @else if (properties.error()) {
+} @else if (hasError()) {
   <p>Error al cargar las propiedades</p>
-} @else if (properties.hasValue()) {
-  @let response = properties.value()!;
-
+} @else {
   <div class="grid">
-    @for (item of response.data; track item.id) {
+    @for (item of items(); track item.id) {
       <div class="col-12 md:col-6 xl:col-4">
         <app-property-card [property]="item" />
       </div>
     }
   </div>
 
-  <nav>
-    <button [disabled]="!response.prev_page_url" (click)="goTo(response.current_page - 1)">
-      Anterior
+  @if (hasMore()) {
+    <button class="load-more" (click)="loadMore()" [disabled]="isLoading()">
+      {{ isLoading() ? 'Cargando...' : 'Ver 12 inmuebles más' }}
     </button>
-
-    <span>{{ response.current_page }} de {{ response.last_page }} ({{ response.total }} resultados)</span>
-
-    <button [disabled]="!response.next_page_url" (click)="goTo(response.current_page + 1)">
-      Siguiente
-    </button>
-  </nav>
-
-  <button class="load-more">Ver 12 inmuebles más</button>
+  }
 }
+
+<button class="scroll-top" (click)="scrollToTop()">Ir arriba</button>

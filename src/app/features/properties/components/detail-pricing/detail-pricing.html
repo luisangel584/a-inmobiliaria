@@ -1,5 +1,5 @@
 <div class="detail-pricing">
-  <span class="detail-pricing__ref"><b>Ref: </b>{{ FkPropiedad() }}</span>
+  <span class="detail-pricing__ref"><b>Ref: </b>{{ FkPropiedad() | uppercase }}</span>
   <span class="detail-pricing__price">{{ Precio() | currency: 'EUR' : 'symbol' : '1.0-0' : 'es' }}</span>
   <span class="detail-pricing__taxes">Gastos e impuestos no incluidos</span>
 </div>

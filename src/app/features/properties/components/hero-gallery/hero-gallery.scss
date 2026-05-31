@@ -14,6 +14,7 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    cursor: pointer;
   }
 
   &__counter {
@@ -26,6 +27,7 @@
     padding: $spacing-s;
     background-color: #ffffff;
     border-radius: $spacing-2xs;
+    cursor: pointer;
   }
 
   &__thumbs {
@@ -40,6 +42,7 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    cursor: pointer;
   }
 
   @media (max-width: 768px) {
@@ -48,5 +51,51 @@
     &__thumbs {
       display: none;
     }
+  }
+}
+
+.gallery-modal {
+  position: fixed;
+  inset: 0;
+  z-index: $z-modal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+
+  &__img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    cursor: default;
+  }
+
+  &__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: $color-white;
+    font-size: 48px;
+    cursor: pointer;
+    display: flex;
+    padding: 0 $spacing-m;
+
+    &--prev { left: 0; }
+    &--next { right: 0; }
+  }
+
+  &__close {
+    position: absolute;
+    top: $spacing-m;
+    right: $spacing-m;
+    background: none;
+    border: none;
+    color: $color-white;
+    font-size: 28px;
+    cursor: pointer;
+    display: flex;
   }
 }
