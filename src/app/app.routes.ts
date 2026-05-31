@@ -11,4 +11,8 @@ export const routes: Routes = [
     redirectTo: 'properties',
     pathMatch: 'full',
   },
+  {
+    path: '**',
+    redirectTo: 'properties',
+  },
 ];
