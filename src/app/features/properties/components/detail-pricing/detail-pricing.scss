@@ -1,0 +1,32 @@
+@use 'styles/variables' as *;
+
+.detail-pricing {
+  margin-top: $spacing-s;
+  margin-bottom: $spacing-l;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+
+  &__price {
+    font-size: 40px;
+    font-weight: 700;
+    color: $color-text-primary;
+    margin-top: $spacing-s;
+  }
+
+  &__taxes {
+    font-size: 12px;
+    font-weight: 400;
+    color: $gray-color;
+  }
+
+  &__ref {
+    font-size: 12px;
+    font-weight: 400;
+    color: $color-text-primary;
+
+    b {
+      font-weight: 700;
+    }
+  }
+}

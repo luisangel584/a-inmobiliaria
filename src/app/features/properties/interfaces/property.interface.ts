@@ -20,6 +20,10 @@ export interface Property {
   Metadescription: string;
   Precio: string;
   PrecioAnterior?: string;
+  DescuentoPrecio?: number;
+  ConstructedArea: number;
+  Bathrooms: number;
+  Bedrooms: number;
 }
 
 export interface PaginationLink {
@@ -33,4 +37,23 @@ export interface PropertyImage {
   FkPropiedad: string;
   Orden: string;
   Uri: string;
+}
+
+export interface PropertyDetail {
+  id: string;
+  imagenes: PropertyImage[];
+  Metadescription: string;
+  ConstructedArea: number;
+  Bathrooms: number;
+  Bedrooms: number;
+  Description: string;
+  address: {
+    provincia: {
+      Nombre: string;
+    };
+  };
+  operacion: {
+    Precio: string;
+    FkPropiedad: string;
+  };
 }

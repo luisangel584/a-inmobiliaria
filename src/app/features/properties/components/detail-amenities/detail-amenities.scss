@@ -1,0 +1,25 @@
+@use 'styles/variables' as *;
+
+.detail-amenities {
+  margin-block: $spacing-m;
+  display: flex;
+  align-items: center;
+  gap: $spacing-l;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-s;
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  &__label {
+    font-size: 16px;
+    font-weight: 400;
+    color: $color-text-primary;
+  }
+}

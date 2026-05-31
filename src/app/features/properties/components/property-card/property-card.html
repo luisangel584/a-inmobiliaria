@@ -1,0 +1,36 @@
+<article class="property-card" [routerLink]="['/properties', property().id]">
+  @if (property().imagenes.length > 0) {
+    <img
+      class="property-card__image"
+      [src]="property().imagenes[0].Uri"
+      [alt]="property().Metadescription"
+    />
+  } @else {
+    <div class="property-card__image property-card__image--placeholder"></div>
+  }
+
+  <div class="property-card__body">
+    <div class="property-card__pricing">
+      <span class="property-card__price">{{ property().Precio | currency: 'EUR' : 'symbol' : '1.0-0' : 'es' }}</span>
+
+      @if (property().PrecioAnterior) {
+        <span class="property-card__price--old">{{ property().PrecioAnterior | currency: 'EUR' : 'symbol' : '1.0-0' : 'es' }}</span>
+      }
+
+      @if (property().DescuentoPrecio) {
+        <span class="property-card__price--discount">
+          <ng-icon name="matArrowDownward" />
+          {{ property().DescuentoPrecio }}%
+        </span>
+      }
+    </div>
+
+    <p class="property-card__description">{{ property().Metadescription }}</p>
+
+    <ul class="property-card__features">
+      <li class="property-card__feature">{{ property().ConstructedArea }} m<sup>2</sup></li>
+      <li class="property-card__feature">{{ property().Bedrooms }} Habitaciones</li>
+      <li class="property-card__feature">{{ property().Bathrooms }} Baños</li>
+    </ul>
+  </div>
+</article>

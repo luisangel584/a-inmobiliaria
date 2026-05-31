@@ -1,0 +1,16 @@
+@use 'styles/variables' as *;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app {
+  &__container {
+    flex: 1;
+    width: 100%;
+    max-width: $container-max-width;
+    margin: 0 auto;
+  }
+}
